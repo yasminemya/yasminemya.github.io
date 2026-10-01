@@ -1,0 +1,238 @@
+/* Chiboub Web Solutions
+   Pixel-inspired ITIS 3135 Theme
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f7;
+    color: #29252b;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px 25px;
+    margin-bottom: 25px;
+    border: 2px solid #d9d9df;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 #f1a8c5;
+}
+
+header h1 {
+    color: #29252b;
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #66616a;
+    margin: 6px 0 0;
+}
+
+/* Pixel decoration */
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #e979a7;
+    top: 15px;
+    left: 18px;
+    box-shadow:
+        16px 0 #f3b6cf,
+        0 16px #f3b6cf,
+        16px 16px #e979a7;
+}
+
+/* Navigation */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    display: inline-block;
+    color: #383239;
+    background-color: #fafafa;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 7px 14px;
+    margin: 4px;
+    border: 2px solid #dedee3;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #b83f70;
+    background-color: #ffe5ef;
+    border-color: #e99bbb;
+}
+
+/* Main content */
+
+main {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #d9d9df;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 #f1a8c5;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    color: #29252b;
+    font-size: 2em;
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eeeeef;
+}
+
+/* Pink pixel underneath headings */
+
+h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 6px;
+    margin: 10px auto 0;
+    background-color: #e979a7;
+    box-shadow:
+        8px 0 #f3b6cf,
+        16px 0 #e979a7,
+        24px 0 #f3b6cf;
+}
+
+h3 {
+    color: #b83f70;
+    margin-top: 30px;
+    padding-left: 12px;
+    border-left: 5px solid #e979a7;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+/* Lists */
+
+ul {
+    background-color: #fafafa;
+    border: 1px solid #e1e1e5;
+    border-radius: 8px;
+    padding: 18px 35px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li::marker {
+    color: #e979a7;
+}
+
+/* Links */
+
+main a {
+    color: #b83f70;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #8f315e;
+}
+
+/* Introduction image */
+
+main img {
+    display: block;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border: 3px solid #e99bbb;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #f3c7d8;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid #d9d9df;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 #f1a8c5;
+    color: #66616a;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #b83f70;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #8f315e;
+    text-decoration: underline;
+}
+
+/* Pixel footer decoration */
+
+footer::before {
+    content: "■ ■ ■";
+    display: block;
+    color: #e979a7;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main img {
+        max-width: 200px;
+    }
+}
