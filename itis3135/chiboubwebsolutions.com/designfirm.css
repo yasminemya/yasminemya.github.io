@@ -1,0 +1,861 @@
+
+        /*
+            Chiboub Web Solutions
+            Design Firm - Pixel Theme
+        */
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --black: #111111;
+            --white: #ffffff;
+            --off-white: #f5f7fa;
+            --blue: #2563eb;
+            --blue-light: #dbeafe;
+            --blue-dark: #1e3a8a;
+
+            --muted: #64748b;
+            --line: #111111;
+
+            --shadow: 7px 7px 0 var(--black);
+
+            --pixel-font: "DM Mono", monospace;
+            --main-font: "Space Grotesk", Arial, sans-serif;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 1180px;
+            min-height: 100vh;
+            padding: 28px;
+
+            background-color: var(--off-white);
+
+            color: var(--black);
+            font-family: var(--main-font);
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           BACKGROUND PIXELS
+        ========================= */
+
+        .pixel-background span {
+            position: fixed;
+            z-index: -1;
+
+            width: 10px;
+            height: 10px;
+
+            background-color: var(--blue);
+
+            opacity: 0.12;
+        }
+
+        .pixel-background span:nth-child(1) {
+            top: 15%;
+            left: 5%;
+        }
+
+        .pixel-background span:nth-child(2) {
+            top: 32%;
+            right: 7%;
+        }
+
+        .pixel-background span:nth-child(3) {
+            top: 72%;
+            left: 8%;
+        }
+
+        .pixel-background span:nth-child(4) {
+            top: 82%;
+            right: 12%;
+        }
+
+        .pixel-background span:nth-child(5) {
+            top: 48%;
+            right: 3%;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 20px 24px;
+
+            background-color: var(--white);
+
+            border: 3px solid var(--line);
+
+            box-shadow: var(--shadow);
+
+            margin-bottom: 55px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand h1 {
+            margin: 0;
+
+            font-size: 1.35rem;
+            line-height: 1.1;
+
+            letter-spacing: -0.5px;
+        }
+
+        .eyebrow {
+            margin: 0 0 4px;
+
+            font-family: var(--pixel-font);
+            font-size: 0.65rem;
+
+            letter-spacing: 2px;
+
+            color: var(--blue);
+        }
+
+        .brand-name {
+            margin: 0;
+
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+
+        /* =========================
+           PIXEL LOGO
+        ========================= */
+
+        .pixel-logo {
+            display: grid;
+
+            grid-template-columns: repeat(4, 9px);
+            grid-template-rows: repeat(4, 9px);
+
+            gap: 2px;
+
+            width: 42px;
+            height: 42px;
+
+            padding: 3px;
+
+            background-color: var(--black);
+
+            border: 2px solid var(--black);
+        }
+
+        .pixel-logo span {
+            background-color: var(--white);
+        }
+
+        .pixel-logo span:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .pixel-logo span:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .pixel-logo span:nth-child(3) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .pixel-logo span:nth-child(4) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            display: grid;
+
+            grid-template-columns: 1fr 0.9fr;
+
+            gap: 55px;
+
+            align-items: center;
+
+            margin-bottom: 70px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .pixel-label {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 9px;
+
+            padding: 7px 11px;
+
+            margin-bottom: 20px;
+
+            background-color: var(--blue-light);
+
+            border: 2px solid var(--black);
+
+            font-family: var(--pixel-font);
+
+            font-size: 0.68rem;
+
+            letter-spacing: 1px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+
+            background-color: var(--blue);
+
+            display: inline-block;
+        }
+
+        .hero h2 {
+            margin: 0;
+
+            max-width: 620px;
+
+            font-size: clamp(3rem, 6vw, 5.3rem);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+        }
+
+        .hero h2 span {
+            color: var(--blue);
+        }
+
+        .hero-text > p {
+            max-width: 520px;
+
+            margin: 25px 0;
+
+            font-size: 1.05rem;
+
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           PIXEL SCENE
+        ========================= */
+
+        .pixel-scene {
+            position: relative;
+
+            min-height: 400px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .scene-window {
+            width: 100%;
+
+            max-width: 470px;
+
+            border: 4px solid var(--black);
+
+            background-color: var(--white);
+
+            box-shadow: 12px 12px 0 var(--black);
+        }
+
+        .window-bar {
+            display: flex;
+
+            gap: 7px;
+
+            padding: 10px;
+
+            border-bottom: 3px solid var(--black);
+
+            background-color: var(--blue-light);
+        }
+
+        .window-bar span {
+            width: 11px;
+            height: 11px;
+
+            border: 2px solid var(--black);
+
+            background-color: var(--white);
+        }
+
+        .scene-screen {
+            position: relative;
+
+            height: 315px;
+
+            overflow: hidden;
+
+            background-color: var(--white);
+        }
+
+
+        /* =========================
+           PIXEL COMPUTER
+        ========================= */
+
+        .pixel-computer {
+            position: absolute;
+
+            bottom: 60px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+        .monitor {
+            width: 170px;
+            height: 120px;
+
+            background-color: var(--black);
+
+            padding: 10px;
+
+            border: 5px solid var(--black);
+        }
+
+        .screen-code {
+            height: 100%;
+
+            padding: 13px;
+
+            background-color: var(--blue-light);
+        }
+
+        .screen-code i {
+            display: block;
+
+            height: 7px;
+
+            margin-bottom: 10px;
+
+            background-color: var(--blue);
+        }
+
+        .screen-code i:nth-child(1) {
+            width: 80%;
+        }
+
+        .screen-code i:nth-child(2) {
+            width: 55%;
+        }
+
+        .screen-code i:nth-child(3) {
+            width: 70%;
+        }
+
+        .computer-stand {
+            width: 35px;
+            height: 25px;
+
+            margin: auto;
+
+            background-color: var(--black);
+        }
+
+        .keyboard {
+            width: 210px;
+            height: 18px;
+
+            margin-left: -20px;
+
+            background-color: var(--white);
+
+            border: 4px solid var(--black);
+        }
+
+
+        /* =========================
+           PIXEL CHARACTER
+        ========================= */
+
+        .pixel-character {
+            position: absolute;
+
+            bottom: 68px;
+            right: 45px;
+
+            width: 65px;
+            height: 110px;
+        }
+
+        .pixel-character .head {
+            position: absolute;
+
+            top: 0;
+            left: 12px;
+
+            width: 42px;
+            height: 42px;
+
+            background-color: var(--white);
+
+            border: 4px solid var(--black);
+        }
+
+        .pixel-character .eye {
+            position: absolute;
+
+            top: 13px;
+
+            width: 6px;
+            height: 6px;
+
+            background-color: var(--black);
+        }
+
+        .pixel-character .eye.left {
+            left: 21px;
+        }
+
+        .pixel-character .eye.right {
+            left: 38px;
+        }
+
+        .pixel-character .body {
+            position: absolute;
+
+            top: 42px;
+            left: 7px;
+
+            width: 52px;
+            height: 48px;
+
+            background-color: var(--blue);
+
+            border: 4px solid var(--black);
+        }
+
+        .pixel-character .leg {
+            position: absolute;
+
+            bottom: 0;
+
+            width: 16px;
+            height: 28px;
+
+            background-color: var(--black);
+        }
+
+        .pixel-character .leg.left {
+            left: 12px;
+        }
+
+        .pixel-character .leg.right {
+            right: 10px;
+        }
+
+        .floor {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 40px;
+
+            background-color: var(--blue);
+
+            border-top: 4px solid var(--black);
+        }
+
+
+        /* =========================
+           FLOATING TAGS
+        ========================= */
+
+        .floating-tag {
+            position: absolute;
+
+            padding: 8px 11px;
+
+            border: 3px solid var(--black);
+
+            font-family: var(--pixel-font);
+
+            font-size: 0.7rem;
+
+            box-shadow: 4px 4px 0 var(--black);
+        }
+
+        .tag-one {
+            top: 25px;
+            left: 0;
+
+            background-color: var(--white);
+        }
+
+        .tag-two {
+            right: -10px;
+            top: 150px;
+
+            background-color: var(--blue-light);
+        }
+
+        .tag-three {
+            bottom: 10px;
+            left: 25px;
+
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+
+        /* =========================
+           ABOUT / FIRM INFO
+        ========================= */
+
+        .firm-section {
+            margin-bottom: 60px;
+        }
+
+        .section-heading {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .section-heading h3 {
+            margin: 0;
+
+            font-size: 1.5rem;
+        }
+
+        .pixel-line {
+            height: 5px;
+
+            width: 30px;
+
+            background-color: var(--black);
+        }
+
+        .content-panel {
+            padding: 35px;
+
+            background-color: var(--white);
+
+            border: 3px solid var(--black);
+
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .content-panel p {
+            max-width: 850px;
+
+            margin: 0;
+        }
+
+
+        /* =========================
+           FIRM CARDS
+        ========================= */
+
+        .firm-cards {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .info-card {
+            padding: 25px;
+
+            background-color: var(--white);
+
+            border: 3px solid var(--black);
+
+            box-shadow: 6px 6px 0 var(--black);
+
+            transition: transform 0.15s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card.featured {
+            background-color: var(--blue-light);
+        }
+
+        .card-icon {
+            display: inline-block;
+
+            padding: 5px 8px;
+
+            margin-bottom: 20px;
+
+            background-color: var(--black);
+
+            color: var(--white);
+
+            font-family: var(--pixel-font);
+
+            font-size: 0.7rem;
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px;
+
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           LIST
+        ========================= */
+
+        .firm-list {
+            padding: 25px 30px;
+
+            background-color: var(--white);
+
+            border: 3px solid var(--black);
+
+            box-shadow: 6px 6px 0 var(--black);
+
+            list-style-type: "▸ ";
+        }
+
+        .firm-list li {
+            margin-bottom: 12px;
+
+            padding-left: 5px;
+        }
+
+        .firm-list li::marker {
+            color: var(--blue);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            background-color: var(--blue-light);
+
+            border: 3px solid var(--black);
+
+            box-shadow: 7px 7px 0 var(--black);
+        }
+
+        .contact-item {
+            padding: 25px;
+        }
+
+        .contact-item + .contact-item {
+            border-left: 3px solid var(--black);
+        }
+
+        .contact-label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family: var(--pixel-font);
+
+            font-size: 0.7rem;
+
+            color: var(--blue-dark);
+
+            text-transform: uppercase;
+        }
+
+        .contact-item p {
+            margin: 0;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .site-footer {
+            margin-top: 55px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-top: 3px solid var(--black);
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+        .footer-pixel {
+            margin-bottom: 12px;
+
+            color: var(--black);
+
+            letter-spacing: 6px;
+
+            font-size: 0.7rem;
+        }
+
+        .site-footer p {
+            margin: 7px 0;
+        }
+
+        .site-footer a {
+            color: var(--blue);
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-small {
+            font-family: var(--pixel-font);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            body {
+                padding: 18px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .pixel-scene {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
+            .firm-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item + .contact-item {
+                border-left: 0;
+
+                border-top: 3px solid var(--black);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .site-header {
+                padding: 15px;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+
+                letter-spacing: -2px;
+            }
+
+            .scene-screen {
+                height: 270px;
+            }
+
+            .scene-window {
+                box-shadow: 7px 7px 0 var(--black);
+            }
+
+            .pixel-character {
+                right: 25px;
+            }
+
+            .floating-tag {
+                display: none;
+            }
+
+            .content-panel {
+                padding: 25px 20px;
+            }
+        }
+    

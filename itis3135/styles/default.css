@@ -1679,3 +1679,21 @@ main a:hover {
         padding: 22px;
     }
 }
+/* Site tagline */
+.site-tagline {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: "DM Mono", monospace;
+    font-size: 14px;
+    color: var(--muted);
+    background: var(--paper-light);
+    border-bottom: 2px solid var(--line);
+    box-sizing: border-box;
+}
+
+.site-tagline em {
+    font-style: italic;
+}
