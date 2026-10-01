@@ -1,60 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chiboub Web Solutions | ITIS 3135 | Home</title>
+
+    <title>Chiboub Web Solutions | Home</title>
+
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles/default.css">
+
 
     <script src="https://lint.page/kit/4c1e4d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Chiboub Web Solutions</h1>
-        <p>ITIS 3135 - Front-End Web Application Development</p>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="contract.html">Contract</a>
-            <a href="introduction.html">Introduction</a>
-            <a href="about.html">About</a>
-        </nav>
+    <div class="pixel-background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="site-header">
+
+    <h1 class="site-title">Yasmine's Pixel | ITIS 3135</h1>
+
+    <div class="brand">
+            <div class="pixel-logo" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div>
+                <p class="eyebrow">ITIS 3135</p>
+                <p class="brand-name">Chiboub Web Solutions</p>            </div>
+        </div>
+
+        <button class="menu-button" id="menuButton" aria-label="Open navigation">
+            ☰
+        </button>
+
+    <nav id="mainNav">
+    <a class="active" href="index.html">Home</a>
+    <a href="contract.html">Contract</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+</nav>
+
     </header>
+    <p class="site-tagline">
+    <em>"Building things one pixel at a time."</em>
+</p>
 
     <main>
-        <h2>Welcome</h2>
 
-        <p>
-            Welcome to my ITIS 3135 website. My name is Yasmine Chiboub,
-            and I am a Computer Science student at UNC Charlotte.
-        </p>
+        <main>
 
-        <p>
-            This website contains information about me, my course work,
-            and my course contract for ITIS 3135.
-        </p>
+    <h2 class="page-title">Home</h2>
 
-        <p>
-            My company for this course is Chiboub Web Solutions, and my
-            mascot is Pixel.
-        </p>
+    <section class="hero">
+            <div class="hero-text">
+
+                <div class="pixel-label">
+                    <span class="dot"></span>
+                    WELCOME TO MY SITE
+                </div>
+
+                <h2>
+                    Building things
+                    <span>one pixel</span>
+                    at a time.
+                </h2>
+
+                <p>
+                    Welcome to my ITIS 3135 website. I'm Yasmine Chiboub,
+                    a Computer Science student at UNC Charlotte.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="pixel-button primary" href="introduction.html">
+                        Meet Me →
+                    </a>
+
+                    <a class="pixel-button secondary" href="about.html">
+                        About This Site
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pixel-scene">
+
+                <div class="scene-window">
+
+                    <div class="window-bar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="scene-screen">
+
+                        <div class="cloud cloud-one"></div>
+                        <div class="cloud cloud-two"></div>
+
+                        <div class="sun"></div>
+
+                        <div class="pixel-computer">
+                            <div class="monitor">
+                                <div class="screen-code">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+
+                            <div class="computer-stand"></div>
+                            <div class="keyboard"></div>
+                        </div>
+
+                        <div class="pixel-character">
+                            <div class="head"></div>
+                            <div class="body"></div>
+                            <div class="leg left"></div>
+                            <div class="leg right"></div>
+                        </div>
+
+                        <div class="floor"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-tag tag-one">HTML</div>
+                <div class="floating-tag tag-two">CSS</div>
+                <div class="floating-tag tag-three">JS</div>
+
+            </div>
+
+        </section>
+
+
+        <section class="intro-cards">
+
+            <article class="info-card">
+                <div class="card-icon">01</div>
+                <h3>Course Work</h3>
+                <p>
+                    This website is part of my work for ITIS 3135 -
+                    Front-End Web Application Development.
+                </p>
+                <a href="about.html">Explore →</a>
+            </article>
+
+            <article class="info-card featured">
+                <div class="card-icon">02</div>
+                <h3>About Me</h3>
+                <p>
+                    Learn more about me, my Computer Science interests,
+                    and what I want to build in the future.
+                </p>
+                <a href="introduction.html">Learn More →</a>
+            </article>
+
+            <article class="info-card">
+                <div class="card-icon">03</div>
+                <h3>Course Contract</h3>
+                <p>
+                    My course contract and agreement for Fall 2026
+                    are available here.
+                </p>
+                <a href="contract.html">View Contract →</a>
+            </article>
+
+        </section>
+
     </main>
 
-    <footer>
-        <p>Chiboub Web Solutions © 2026</p>
+    <footer class="site-footer">
 
-        <p>
-            <a href="https://validator.w3.org/" target="_blank">HTML Validator</a>
-            |
-            <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validator</a>
-        </p>
+    <div class="footer-pixel">
+        ■ ■ ■ ■
+    </div>
 
-        <p>
-            Designed by Yasmine Chiboub
-        </p>
-    </footer>
+    <p>
+        Chiboub Web Solutions ©2026
+    </p>
 
-    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <div class="footer-links">
+        <a href="https://webpages.charlotte.edu/ychiboub/" target="_blank">
+            CLT Web
+        </a>
+
+        <span>|</span>
+
+        <a href="https://yasminemya.github.io/resumeWeb/" target="_blank">
+            GitHub.io
+        </a>
+
+        <span>|</span>
+
+        <a href="https://github.com/yasminemya" target="_blank">
+            GitHub
+        </a>
+
+        <span>|</span>
+
+        <a href="https://www.freecodecamp.org/yasminemya" target="_blank">
+            freeCodeCamp
+        </a>
+
+        <span>|</span>
+
+        <a href="https://www.codecademy.com/profiles/yasminemya" target="_blank">
+            Codecademy
+        </a>
+
+        <span>|</span>
+
+        <a href="https://www.linkedin.com/in/yasmine-chiboub/" target="_blank">
+            LinkedIn
+        </a>
+    </div>
+
+    <p class="footer-small">
+        Designed by Yasmine Chiboub
+    </p>
+
+</footer>
+
+    <script src="scripts/script.js"></script>
+
+    <script
+        src="https://divonbriesen.github.io/teaching/tools/standards-check.js"
+        defer>
+    </script>
+
 </body>
 </html>
