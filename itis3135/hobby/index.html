@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reading | My Hobby</title>
+
+    <meta name="description"
+        content="A personal hobby website about reading fantasy books and enjoying romance subplots.">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --navy: #243447;
+            --plum: #715d7d;
+            --rose: #b96f86;
+            --sage: #6c806f;
+            --cream: #f7efe3;
+            --paper: #fffaf2;
+            --ink: #2d3035;
+            --muted: #65707a;
+            --line: #d6c9b8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "Space Grotesk", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 1.25rem 1.5rem;
+            border-bottom: 7px solid var(--rose);
+        }
+
+        .wrap {
+            width: min(1080px, 92%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 .3rem;
+            color: #d9e8e1;
+            font-family: "DM Mono", monospace;
+            font-size: .82rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .tagline {
+            max-width: 700px;
+            color: #e9eef2;
+            margin: 1rem 0 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .55rem;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: .55rem .8rem;
+            border: 1px solid #637589;
+            border-radius: 999px;
+            background: #30475e;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a:focus-visible,
+        nav a.active {
+            background: var(--rose);
+            border-color: var(--rose);
+            outline: 3px solid #ead4df;
+            outline-offset: 2px;
+        }
+
+        main {
+            padding: 2rem 0 3rem;
+        }
+
+        .section-page {
+            display: none;
+        }
+
+        .section-page.active {
+            display: block;
+        }
+
+        .intro {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-left: 7px solid var(--plum);
+            padding: 1.3rem 1.5rem;
+            margin-bottom: 1.3rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--navy);
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+        }
+
+        h3 {
+            color: var(--plum);
+            margin-bottom: .35rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .card,
+        figure,
+        .prompt-box {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.2rem;
+            margin: 0;
+            box-shadow: 0 10px 24px rgba(36, 52, 71, .08);
+        }
+
+        .wide {
+            grid-column: 1 / -1;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            max-height: 310px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+        }
+
+        figcaption {
+            margin-top: .8rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .ai-note {
+            margin: .35rem 0 0;
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        .divider {
+            margin: 1.6rem 0;
+            text-align: center;
+            color: var(--rose);
+            font-size: 1.6rem;
+            letter-spacing: .5rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--paper);
+        }
+
+        th,
+        td {
+            border: 1px solid var(--line);
+            padding: .75rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #e9e2ef;
+            color: var(--navy);
+        }
+
+        .quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            border-left: 4px solid var(--rose);
+            padding-left: 1rem;
+        }
+
+        code {
+            font-family: "DM Mono", monospace;
+            background: #eee5d8;
+            padding: .15rem .3rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 1.8rem 0 2.5rem;
+            color: var(--muted);
+        }
+
+        .validation-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: 1rem;
+        }
+
+        .validation-links a {
+            color: var(--navy);
+            background: #e9e2ef;
+            border: 1px solid #c9bfd1;
+            padding: .5rem .7rem;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .validation-links a:hover,
+        .validation-links a:focus-visible {
+            background: #ead4df;
+            outline: 3px solid #d9e8e1;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 720px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wide {
+                grid-column: auto;
+            }
+
+            nav a {
+                font-size: .92rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="wrap">
+
+        <p class="eyebrow">ITIS 3135 • Hobby / Interest</p>
+
+        <h1>Reading</h1>
+
+        <p class="tagline">
+            Fantasy worlds, romance subplots, and the feeling of getting
+            completely lost in a good book.
+        </p>
+
+        <nav aria-label="Hobby sections">
+            <ul>
+                <li>
+                    <a class="nav-link" href="#what" data-section="what">
+                        What
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#who" data-section="who">
+                        Who
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#when" data-section="when">
+                        When
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#where" data-section="where">
+                        Where
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#how" data-section="how">
+                        How
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#why" data-section="why">
+                        Why
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#ai-prompts"
+                        data-section="ai-prompts">
+                        AI Prompts
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="wrap">
+
+    <!-- WHAT -->
+
+    <section id="what"
+        class="section-page active"
+        aria-labelledby="what-title">
+
+        <div class="intro">
+
+            <h2 id="what-title">What: My Hobby</h2>
+
+            <p>
+                Reading is one of my favorite ways to relax. I especially like
+                fantasy books and books that have a romance subplot. I enjoy
+                stories where there is a bigger world to discover, but I also
+                want characters whose relationships actually make me care about
+                what happens next.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/readingbook.jpg"
+                    alt="An open book in a cozy reading setting">
+
+                <figcaption>
+                    An open book waiting for a new story.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a cozy photorealistic
+                        photograph of an open book on a soft blanket with
+                        warm natural lighting and a peaceful reading mood."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>What I Like to Read</h3>
+
+                <ul>
+                    <li>
+                        Fantasy with interesting worlds and magic.
+                    </li>
+
+                    <li>
+                        Romance that adds emotion to the main story.
+                    </li>
+
+                    <li>
+                        Books with characters I can get attached to.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <h3>What Makes a Book Fun for Me</h3>
+
+                <p>
+                    I like when a book gives me something to escape into. A
+                    good fantasy setting can make a normal day feel more
+                    exciting, while a romance subplot gives me another reason
+                    to keep reading. I do not need every book to be perfect.
+                    I mostly want a story that keeps me thinking about it after
+                    I put it down.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- WHO -->
+
+    <section id="who"
+        class="section-page"
+        aria-labelledby="who-title">
+
+        <div class="intro">
+
+            <h2 id="who-title">Who: Me as a Reader</h2>
+
+            <p>
+                I am the type of reader who can say I will read "just one more
+                chapter" and then realize I have been reading for much longer
+                than planned. My favorite books usually combine an interesting
+                plot with characters I actually care about.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/mountains.jpg"
+                    alt="A fantasy landscape with mountains and a moon">
+
+                <figcaption>
+                    Fantasy is one of my favorite genres because it gives me a
+                    whole world to explore.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic fantasy
+                        landscape with distant mountains, a glowing moon,
+                        subtle stars, and a magical but peaceful atmosphere."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>My Reader Personality</h3>
+
+                <ol>
+                    <li>
+                        I care about characters and their development.
+                    </li>
+
+                    <li>
+                        I like a plot that keeps moving.
+                    </li>
+
+                    <li>
+                        I appreciate romance when it fits naturally into the
+                        story.
+                    </li>
+                </ol>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <h3>My Favorite Combination</h3>
+
+                <p>
+                    My favorite combination is fantasy plus romance. I like
+                    having the larger adventure or mystery happening in the
+                    background while the characters build relationships and
+                    figure out what they mean to each other. It gives the story
+                    more than one thing to look forward to.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- WHEN -->
+
+    <section id="when"
+        class="section-page"
+        aria-labelledby="when-title">
+
+        <div class="intro">
+
+            <h2 id="when-title">When: My Reading Time</h2>
+
+            <p>
+                I do not have one perfect reading schedule. I usually read
+                when I have a break from schoolwork or when I want to wind
+                down at night.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/nighttime.jpg"
+                    alt="A cozy nighttime reading scene">
+
+                <figcaption>
+                    Nighttime is one of my favorite times to settle into a
+                    book.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic cozy nighttime
+                        reading scene with a book, warm lamp light, blanket,
+                        and calm bedroom atmosphere."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>When I Usually Read</h3>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>What I Usually Do</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Evening</td>
+                            <td>
+                                Read a few chapters to relax.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Weekend</td>
+                            <td>
+                                Read for longer when I have more free time.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Breaks</td>
+                            <td>
+                                Read instead of scrolling on my phone.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <h3>Seasonal Reading</h3>
+
+                <p>
+                    My reading mood changes with the season. I tend to want
+                    cozy, emotional stories when the weather gets colder.
+                    During warmer months, I like books that feel adventurous
+                    and easy to get into. Either way, a good book can fit into
+                    any season.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- WHERE -->
+
+    <section id="where"
+        class="section-page"
+        aria-labelledby="where-title">
+
+        <div class="intro">
+
+            <h2 id="where-title">Where: Places I Like to Read</h2>
+
+            <p>
+                The best reading spot for me is somewhere comfortable where I
+                can focus. I do not necessarily need complete silence, but I
+                do need a place where I can settle in without constantly being
+                interrupted.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/bookshelf.jpg"
+                    alt="A cozy library with bookshelves">
+
+                <figcaption>
+                    Libraries and cozy spaces make it easy to get into reading
+                    mode.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic cozy library
+                        with tall bookshelves, comfortable seating, warm
+                        lighting, and a peaceful reading atmosphere."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>My Favorite Spots</h3>
+
+                <ul>
+                    <li>
+                        My bed or a comfortable chair.
+                    </li>
+
+                    <li>
+                        A quiet library corner.
+                    </li>
+
+                    <li>
+                        A café when I want some background noise.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <h3>What Makes a Good Reading Place?</h3>
+
+                <p>
+                    Comfort matters a lot. I want enough light to read without
+                    straining my eyes, a comfortable place to sit, and as few
+                    distractions as possible. Having a drink nearby is also a
+                    bonus. The main goal is to make it easy to stay focused on
+                    the story.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- HOW -->
+
+    <section id="how"
+        class="section-page"
+        aria-labelledby="how-title">
+
+        <div class="intro">
+
+            <h2 id="how-title">How: How I Read</h2>
+
+            <p>
+                I like to keep reading simple. I choose a book based on the
+                story, the genre, or a recommendation, then give myself enough
+                time to actually get into it.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/bookmark.jpg"
+                    alt="A book with a bookmark and reading notes">
+
+                <figcaption>
+                    Sometimes I mark pages when something stands out.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic open fantasy
+                        book with a simple bookmark, a few sticky notes, and
+                        warm natural lighting."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>My Simple Reading Process</h3>
+
+                <ol>
+                    <li>
+                        Pick a book that sounds interesting.
+                    </li>
+
+                    <li>
+                        Read a few chapters before deciding how I feel about it.
+                    </li>
+
+                    <li>
+                        Keep reading when I become invested in the characters
+                        or plot.
+                    </li>
+
+                    <li>
+                        Write down a title if I want to remember or recommend
+                        it.
+                    </li>
+                </ol>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <h3>Physical Books vs. Digital</h3>
+
+                <p>
+                    I like physical books because there is something satisfying
+                    about seeing my progress through the pages. Digital books
+                    are convenient when I am traveling or carrying a lot of
+                    school stuff. I can enjoy both, so I usually choose based
+                    on what is easiest at the time.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- WHY -->
+
+    <section id="why"
+        class="section-page"
+        aria-labelledby="why-title">
+
+        <div class="intro">
+
+            <h2 id="why-title">Why: Why I Love Reading</h2>
+
+            <p>
+                Reading gives me a break from school, work, and everyday
+                responsibilities. It lets me focus on something completely
+                different for a while.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/why-reading.jpg"
+                    alt="A cozy reading scene representing imagination">
+
+                <figcaption>
+                    Stories can spark ideas, emotions, and new perspectives.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic cozy reading
+                        scene that represents imagination and escaping into a
+                        story, with a book, soft lighting, and dreamy details."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="card">
+
+                <h3>Three Reasons</h3>
+
+                <ul>
+                    <li>
+                        <strong>Escape:</strong> I can step into another world
+                        for a while.
+                    </li>
+
+                    <li>
+                        <strong>Relaxation:</strong> Reading helps me slow down.
+                    </li>
+
+                    <li>
+                        <strong>Connection:</strong> I get attached to
+                        characters and their stories.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="card wide">
+
+                <p class="quote">
+                    "A good book is one that makes me forget I am checking
+                    the time."
+                </p>
+
+                <h3>Reading Beyond Entertainment</h3>
+
+                <p>
+                    Books can also help me understand different personalities,
+                    relationships, cultures, and situations. Even when a story
+                    is completely fictional, it can still make me think about
+                    real life in a different way.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider" aria-hidden="true">
+            ✦ ◇ ✦
+        </div>
+
+    </section>
+
+
+    <!-- AI PROMPTS -->
+
+    <section id="ai-prompts"
+        class="section-page"
+        aria-labelledby="ai-title">
+
+        <div class="intro">
+
+            <h2 id="ai-title">AI Prompts</h2>
+
+            <p>
+                AI was used to help create the artwork and brainstorm some of
+                the site content. I kept the final writing personal and
+                focused on my actual interest in reading fantasy books and
+                romance subplots.
+            </p>
+
+        </div>
+
+        <div class="grid">
+
+            <figure>
+
+                <img src="images/romance.jpg"
+                    alt="A romantic reading scene with a book">
+
+                <figcaption>
+                    Romance is one of my favorite elements to find in a story.
+                </figcaption>
+
+                <p class="ai-note">
+                    <em>
+                        AI prompt used: "Create a photorealistic romantic
+                        reading scene with an open book, soft pink and cream
+                        colors, warm lighting, and a cozy atmosphere."
+                    </em>
+                </p>
+
+            </figure>
+
+
+            <div class="prompt-box">
+
+                <h3>Content Brainstorming Prompt</h3>
+
+                <p>
+                    <code>
+                        Help me plan a seven-section hobby website about my
+                        love of reading, especially fantasy books and romance
+                        subplots. Keep the ideas personal, simple, and
+                        appropriate for a college student.
+                    </code>
+                </p>
+
+            </div>
+
+
+            <div class="prompt-box">
+
+                <h3>Design Prompt</h3>
+
+                <p>
+                    <code>
+                        Suggest a cozy color palette and visual direction for
+                        a reading website that feels bookish and different
+                        from a typical technology website.
+                    </code>
+                </p>
+
+            </div>
+
+
+            <div class="prompt-box">
+
+                <h3>Accessibility Prompt</h3>
+
+                <p>
+                    <code>
+                        Review this hobby website for semantic HTML,
+                        keyboard-accessible navigation, meaningful image alt
+                        text, responsive design, and a single-page navigation
+                        pattern.
+                    </code>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="wrap">
+
+    <p>
+        <strong>Reading • ITIS 3135 Hobby Site</strong>
+    </p>
+
+    <p>
+        Built as a multi-section hobby website for ITIS 3135.
+    </p>
+
+    <div class="validation-links">
+
+        <a href="https://validator.w3.org/nu/"
+            target="_blank"
+            rel="noopener noreferrer">
+            HTML Validator
+        </a>
+
+        <a href="https://jigsaw.w3.org/css-validator/"
+            target="_blank"
+            rel="noopener noreferrer">
+            CSS Validator
+        </a>
+
+        <a href="https://wave.webaim.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Accessibility Checker
+        </a>
+
+        <a href="../designfirm.html">
+            Design Firm
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+    const sections = document.querySelectorAll(".section-page");
+    const links = document.querySelectorAll(".nav-link");
+
+    function showSection(id) {
+
+        const validId = document.getElementById(id)
+            ? id
+            : "what";
+
+        sections.forEach(function(section) {
+            section.classList.toggle(
+                "active",
+                section.id === validId
+            );
+        });
+
+        links.forEach(function(link) {
+
+            const active =
+                link.dataset.section === validId;
+
+            link.classList.toggle("active", active);
+
+            if (active) {
+                link.setAttribute("aria-current", "page");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    function handleNavigation() {
+
+        const requested =
+            window.location.hash.substring(1);
+
+        showSection(requested || "what");
+    }
+
+    window.addEventListener(
+        "hashchange",
+        handleNavigation
+    );
+
+    handleNavigation();
+</script>
+
+</body>
+</html>
